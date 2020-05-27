@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     # ===============追加==============
     @tweets = @user.tweets #@user.tweetsは複数のツイートが入った配列となっております。
     # ================================
+    @favorite_tweets = @user.favorite_tweets # 追加
   end
 
 end
