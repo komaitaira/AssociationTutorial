@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :favorites
   has_many :favorite_tweets, through: :favorites, source: :tweet  # 追加
+  # source: :tweet は参照元のモデルを指すオプション。これを指定することでアソシエーションでメソッドチェーンする時の名称を変更することができます。
 end
