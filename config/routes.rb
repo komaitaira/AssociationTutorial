@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   #======================================
-  resources :users
+  # 親であるuserのidが欲しいため、usersの中にネストしましょう。
+  resources :users do
+  	resource :relationships, only: [:create, :destroy]
+  	get :follows, on: :member
+  	get :followers, on: :member
+  end
 end
